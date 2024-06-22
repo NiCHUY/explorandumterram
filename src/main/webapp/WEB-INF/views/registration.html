@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Registration</title>
-  <link rel="stylesheet" type="text/css" href="registration_style.css">
+  <link rel="stylesheet" th:href="@{/css/registration_style.css}">
 </head>
-<body>
+<body>  
 <div class="container">
   <h2>Registration</h2>
   <form>
     <div class="form-group">
-      <label for="username">Имя пользователя:</label>
+      <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
     </div>
     <div class="form-group">
-      <label for="password">Пароль:</label>
+      <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
     </div>
     <div class="form-group">
@@ -21,7 +21,7 @@
       <input type="email" id="email" name="email" required>
     </div>
     <div class="form-group">
-      <button type="submit">Зарегистрироваться</button>
+      <button type="submit">Registration</button>
     </div>
   </form>
 </div>
