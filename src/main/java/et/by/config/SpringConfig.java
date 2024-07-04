@@ -44,15 +44,14 @@ public class SpringConfig  implements WebMvcConfigurer {
         return templateEngine;
     }
 
-    @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
     }
-    @Override
+
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/css/**").addResourceLocations("classpath:static/css/");
-        registry.addResourceHandler("/images/**").addResourceLocations("classpath:static/images/");
+        registry.addResourceHandler("/js/**").addResourceLocations("classpath:static/js/");
     }
 }

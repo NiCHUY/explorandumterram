@@ -7,7 +7,7 @@
 <body>
 <div class="container">
   <h2>Login</h2>
-  <form>
+  <form th:method="Post" th:action="@{/loginHandler}">
     <div class="form-group">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>

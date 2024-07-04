@@ -6,20 +6,6 @@
 </head>
 <body>
 <div class="container">
-  <h2>Login</h2>
-  <form>
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <div class="form-group">
-      <button type="submit">Login</button>
-    </div>
-  </form>
   <div class="social-links">
     <ul>
       <li><a href="https://github.com/NichiporukRoman" target="_blank">GitHub</a></li>
@@ -27,6 +13,12 @@
       <li><a href="https://www.linkedin.com/in/roman-nichiporuk-a001022b1/" target="_blank">LinkedIn</a></li>
     </ul>
   </div>
+  <h2>Explorandum terram</h2>
+  <h3><span th:text="${username}"></span></h3>
+
+  <div class="tile" onclick="handleClick('Victorian', 'lobby')">Victorian</div>
+
+  <script type="text/javascript" th:src="@{/js/handleTileClick.js}"></script>
 </div>
 </body>
 </html>
