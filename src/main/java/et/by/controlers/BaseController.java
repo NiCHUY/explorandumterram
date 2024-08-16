@@ -5,6 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class BaseController {
+    @GetMapping("/starting")
+    public String startingController() {
+        return "welcome_page";
+    }
+
     @GetMapping("/registration")
     public String registrationController() {
         return "registration";
