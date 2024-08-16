@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
   <title>Login</title>
   <link rel="stylesheet" th:href="@{/css/registration_style.css}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
   <h2>Login</h2>
-  <form>
+  <form th:action="@{/logging}" th:object="${userForm}" method="post">
     <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
+      <label th:for="username">Username:</label>
+      <input type="text" th: id="username" name="username" th:field="*{username}" required>
     </div>
     <div class="form-group">
       <label for="password">Password:</label>

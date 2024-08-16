@@ -10,15 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b41bbb2-40ea-49e3-9b39-f22432dd11f4" name="Changes" comment="ч">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/lobby_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lobby.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/et/by/controlers/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/et/by/controlers/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/registration_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/registration_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/et/by/dao/ConnectionInit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/et/by/dao/DaoException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/et/by/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/et/by/dao/pull/ConnectionPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/et/by/dao/pull/PersistentException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/et/by/dao/pull/PooledConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/et/by/models/user/UserValidator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +27,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,58 +62,63 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/ExplorandumTerram/src/main/webapp/WEB-INF/views",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.14895156",
-    "project.structure.side.proportion": "0.37428242",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "spring.configuration.checksum": "259019ab0d9182ad981745fa418f37d6"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/ExplorandumTerram/src/main/resources&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.14895156&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37428242&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;259019ab0d9182ad981745fa418f37d6&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ExplorandumTerram\src\main\resources" />
+      <recent name="E:\ExplorandumTerram\src\main\java\et\by\dao" />
+      <recent name="E:\ExplorandumTerram\src\main\resources\static\images" />
+      <recent name="E:\ExplorandumTerram\src\main\resources\static\js" />
       <recent name="E:\ExplorandumTerram\src\main\webapp\WEB-INF\views" />
-      <recent name="E:\ExplorandumTerram\src\main\resources\static\css" />
-      <recent name="D:\ExplorandumTerram\src\main\webapp\WEB-INF\views" />
-      <recent name="E:\ExplorandumTerram\src\main\java\et\by\config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ExplorandumTerram\src\main\resources\static\images\lobby_tiles" />
       <recent name="D:\ExplorandumTerram\src\main\resources\static\" />
       <recent name="D:\ExplorandumTerram\src\main\resources" />
       <recent name="D:\ExplorandumTerram\src\main\resources\static" />
       <recent name="D:\ExplorandumTerram\explorandumterram\src\main" />
-      <recent name="D:\ExplorandumTerram\explorandumterram\src\main\java\et\by\" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="et.by.dao" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 10.1.241" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.241" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="20" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/registration" />
+    <configuration name="Tomcat 10.1.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/lobby" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="ExplorandumTerram:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="b47183b9-f7e4-4dd3-8ef4-0d2761fa490f" />
+        <option name="BASE_DIRECTORY_NAME" value="c2c0ab6f-2d7d-4be6-a86b-eb273611abf2" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -121,7 +126,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56939" />
+        <option name="DEBUG_PORT" value="56909" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -207,6 +212,20 @@
       <workItem from="1719135214878" duration="3118000" />
       <workItem from="1719163053060" duration="610000" />
       <workItem from="1719259416937" duration="2185000" />
+      <workItem from="1722507476447" duration="597000" />
+      <workItem from="1722768187673" duration="801000" />
+      <workItem from="1722776890704" duration="11707000" />
+      <workItem from="1722844010191" duration="9816000" />
+      <workItem from="1722963802236" duration="3141000" />
+      <workItem from="1722967203020" duration="4629000" />
+      <workItem from="1723047039942" duration="3710000" />
+      <workItem from="1723274131047" duration="1537000" />
+      <workItem from="1723531473630" duration="1850000" />
+      <workItem from="1723617093270" duration="791000" />
+      <workItem from="1723789117295" duration="5104000" />
+      <workItem from="1723805509393" duration="597000" />
+      <workItem from="1723807391422" duration="597000" />
+      <workItem from="1723965565164" duration="741000" />
     </task>
     <task id="LOCAL-00001" summary="ч">
       <option name="closed" value="true" />
