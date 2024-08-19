@@ -3,77 +3,22 @@
 <head>
   <title>Login</title>
   <link rel="stylesheet" th:href="@{/css/lobby_style.css}">
-  <link rel="stylesheet" th:href="@{/css/outlined_text.css}">
 </head>
 <body>
-<!--<script th:src="@{/js/id-checker.js}"></script>-->
 <div class="container">
-  <h2>Theoretical material</h2>
-  <style>
-    .scroll-container {
-      display: flex;
-      overflow-x: auto;
-      white-space: nowrap;
-      scroll-snap-type: x mandatory;
-    }
-  </style>
-  <div class="scroll-container">
-    <a href="https://en.wikipedia.org/wiki/Victorian_era" class="tile">
-      <style>
-        .tile {
-          width: 200px;
-          height: 200px;
-          flex-shrink: 0;
-          margin-right: 10px;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .tile img {
-          opacity: 0.9;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 4px;
-          transition: transform 0.3s ease;
-        }
-
-        .tile:hover img {
-          opacity: 1;
-          transform: scale(1.25);
-        }
-
-        .tile div {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: white;
-          text-align: center;
-        }
-      </style>
-      <div class="tile">
-        <img th:src="@{/images/victoria.png}" alt="Victorian era">
-        <div class="outlined-text">Victorian era</div>
-      </div>
-    </a>
-    <a href="https://en.wikipedia.org/wiki/World_War_II" class="tile">
-      <div class="tile">
-        <img th:src="@{/images/ww2.png}" alt="World War II">
-        <div class="outlined-text">World War II</div>
-      </div>
-    </a>
-  </div>
-
-  <script th:src="@{/js/tile.js}"></script>
   <div class="social-links">
     <ul>
       <li><a href="https://github.com/NichiporukRoman" target="_blank">GitHub</a></li>
-      <li><a href="https://vk.com/romannichiporuk" target="_blank">VK</a></li>
+      <li><a href="https://vk.com/nichufromhell" target="_blank">VK</a></li>
       <li><a href="https://www.linkedin.com/in/roman-nichiporuk-a001022b1/" target="_blank">LinkedIn</a></li>
     </ul>
   </div>
-</div>
+  <h2>Explorandum terram</h2>
+  <h3><span th:text="${username}"></span></h3>
 
+  <div class="tile" onclick="handleClick('Victorian', 'lobby')">Victorian</div>
+
+  <script type="text/javascript" th:src="@{/js/handleTileClick.js}"></script>
+</div>
 </body>
 </html>
